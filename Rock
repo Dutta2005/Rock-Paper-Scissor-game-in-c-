@@ -1,0 +1,44 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    srand(time(0));
+    cout<<"!!Welcome to the game of fun!!"<<endl;
+    cout<<"1.Rock\n2.Paper\n3.Scissor\n";
+    int choice;
+    int computerChoice;
+    do{
+        cout<<"Enter your choice (1-3): ";
+        cin>>choice;
+        computerChoice=rand()%3+1;
+        if(choice>=1 && choice<=3){
+            cout<<"Computer choice: ";
+            switch(computerChoice){
+                case 1:
+                      cout<<"Rock\n";
+                      break;
+                case 2:
+                      cout<<"Paper\n";
+                      break;
+                case 3:
+                      cout<<"Scissor\n";
+                      break;
+            }
+            if(choice==computerChoice){
+                cout<<"It's a tie!"<<endl;
+            }
+            else if((choice==1 && computerChoice==3) || (choice==2 && computerChoice==1) || (choice==3 && computerChoice==2)){
+                cout<<"You wins!!"<<endl;
+            }
+            else{
+                cout<<"You loses!!"<<endl;
+            }
+        }
+        else if(choice!=4){
+            cout<<"Invalid choice!!! Please choose correct one."<<endl;
+        }
+    }
+    while(choice!=4);
+    cout<<"Thak you for playing.";
+    return 0;
+}
